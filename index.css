@@ -1,0 +1,291 @@
+/* Reset style  */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+    font-family: "JetBrains Mono", monospace;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Général */
+
+body {
+  position: relative;
+  margin: auto;
+  margin-bottom: 60px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  box-shadow: 4px -4px 2px 0px rgba(255, 255, 255, 0.53);
+  border: none;  
+  border-radius: 10px ;
+  background: #FFFFFF;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 800;
+  color: #563148;
+  cursor: pointer;
+}
+.section_titre {
+  margin: auto;
+  padding: 30px 0;
+  text-align: center;
+  font-weight: 800;
+  font-size: 30px;
+  color: #563148;
+}
+
+/* Footer fixe de la landing page */
+footer {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(86, 49, 72, 0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  font-weight: 100;
+  font-size: 14px;
+}
+.footer_information {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.calltoaction {
+  display: flex;
+  gap: 30px;
+}
+
+/* Accueil landing page */
+
+header {
+  background: url('./assetts/images/header_femmes_magiciennes.webp');
+  width: 100%;
+  height: 80vh;
+  position: relative;
+}
+
+.header_image {
+    object-fit: cover;
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+.titre {
+    position: absolute;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(86, 49, 72, 0.8);
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    top: 30px;
+    left: 30px;
+}
+.sous-titre {
+    position: absolute;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(86, 49, 72, 0.8);
+    font-family: 'Dancing script';
+    font-size: 34px;
+    font-weight: 600;
+    color: #fff;
+    top: 120px;
+    left: 30px;
+}
+.date {
+    position: absolute;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(86, 49, 72, 0.8);
+    font-size: 24px;
+    font-weight: 400;
+    text-align: right;
+    color: #fff;
+    top: 30px;
+    right: 30px;
+}
+
+/* Section description de l'event */
+
+.description {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.part_left, .part_right {
+  margin: auto;
+  max-width: 1240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.description img {
+  max-height: 600px;
+}
+.description_container {
+  z-index: 10;
+  background-color: rgb(86, 49, 72, 0.8);
+  padding: 40px 40px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+  /* position: absolute; */
+}
+.part_left .description_container{
+  margin-right: -150px;
+}
+.part_right .description_container{
+  margin-left: -250px;
+}
+
+/* Section programme de l'event */
+
+.programme {
+  margin: auto;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+}
+.programme_container {
+  margin: 20px 0px;
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+}
+.programme_bloc {
+  background-color: rgb(86, 49, 72, 0.8);
+  width: 20%;
+}
+.programme_bloc p {
+  padding: 20px 20px;
+  font-weight: 100;
+  font-size: 14px;
+  /* letter-spacing: -0.6px; */
+  color: #FFFFFF;
+}
+.programme_titre {
+  background-color: rgb(86, 49, 72);  
+  overflow-wrap: break-word;
+  height: 60px;
+  padding: 15px 20px 0 20px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Section lieu de la retraite  */
+.place {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+}
+/* .place img {
+  width: 400px;
+} */
+.place_description {
+  background-color: rgb(86, 49, 72, 0.8);
+  max-width: 700px;
+  padding: 20px 20px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+  margin-left: -60px;
+}
+
+/* Section about  */
+.about {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+.amelia, .marion {
+  margin: auto;
+  margin-bottom: 30px;
+  max-width: 1240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about img {
+  max-height: 600px;
+}
+.about_description {
+  z-index: 10;
+  background-color: rgb(86, 49, 72, 0.8);
+  padding: 40px 40px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+  /* position: absolute; */
+}
+.about_description h3 {
+  margin-bottom: 20px;
+}
+.amelia .about_description{
+  margin-left: -150px;
+}
+.marion .about_description{
+  margin-right: -250px;
+}
+
+/* Modal pour formulaire résa et être rappelée */
+
+.modal_container {
+  z-index: 20;
+  background-color: rgb(86, 49, 72, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+

@@ -31,6 +31,8 @@
           "startDate": "2024-10-25T10:30"
         }
         </script>
+        <script src="./JS/modalResa.js" defer></script>
+        <script src="./JS/modalCall.js" defer></script>
 </head>
 <body>
     <header>
@@ -127,50 +129,83 @@
                 <img src="./assetts/images/presentation_photo_marion.webp" alt="Photo de Marion Boulard">
             </div>
         </section>
-        <aside class="modal_container">
+        <dialog id="dialog1" class="dialog">
           <div class="modal_content">
+            <button onclick="window.dialog1.close();" aria-label="close" class="x">❌</button>
             <div class="modal_titre">
               <h2>Je réserve ma place</h2>
               <p>pour cette expérience inoubliable et merveilleuse !</p>
             </div>
             <form action="" method="">
-              <ul>
-                <li>
-                  <label for="name">Nom et prénom :</label>
-                  <input type="text" id="name" name="nom_prenom" />
-                </li>
-                <li>
-                  <label for="number">Téléphone :</label>
-                  <input type="number" id="phone" name="user_phone" />
-                </li>
-                <li>
-                  <label for="mail">Mail :</label>
-                  <input type="email" id="mail" name="user_mail" />
-                </li>
-                <li>
-                  <label for="datebirth">Date de naissance :</label>
-                  <input type="text" id="datebirth" name="user_datebirth" />
-                </li>
-                <li>
+                <div class="ligne_double">
+                  <div class="champ demi_champ">
+                    <label for="name">Nom et prénom :</label>
+                    <input type="text" id="name" name="nom_prenom" />
+                  </div>
+                  <div class="champ demi_champ">
+                    <label for="number">Téléphone :</label>
+                    <input type="number" id="phone" name="user_phone" />
+                  </div>
+                </div>
+                <div class="ligne_double">
+                  <div class="champ demi_champ">
+                    <label for="mail">Mail :</label>
+                    <input type="email" id="mail" name="user_mail" />
+                  </div>
+                  <div class="champ demi_champ">
+                    <label for="datebirth">Date de naissance :</label>
+                    <input type="text" id="datebirth" name="user_datebirth" />
+                  </div>
+                </div>
+                <div class="champ">
                   <label for="adresse">Adresse postale :</label>
                   <input type="text" id="adresse" name="user_adresse" />
-                </li>
-                <li>
+                </div>
+                <div class="champ champ_demi_area">
                   <label for="reve">Quel est le rêve avec lequel je suis en chemin ?</label>
                   <textarea id="reve" name="user_reve"></textarea>
-                </li>
-                <li>
+                </div>
+                <div class="champ champ_demi_area">
                   <label for="appui">Sur quoi je m'appuie déjà pour le manifester ?</label>
                   <textarea id="appui" name="user_appui_reve"></textarea>
-                </li>
-                <li>
+                </div>
+                <div class="champ champ_area">
                   <label for="attentes">Quelles sont mes attentes ou intentions concernant ce stage ?</label>
                   <textarea id="attentes" name="user_attentes"></textarea>
-                </li>
-              </ul>
+                </div>
+                <div class="reservation_text"><p>En réservant ma place, je m’engage à participer au stage prévu du 25 au 28 octobre 2024. Mon inscription sera validée à l’envoi d’un chèque d'acompte de 225€ à l’ordre de Marion Boulard Saleix 24420 Sorges en Périgord.</p></div>
+                <button type="submit">Je réserve ma place</button>
             </form>
           </div>
-        </aside>
+        </dialog>
+        <dialog id="dialog2" class="dialog">
+          <div class="modal_content">
+            <button onclick="window.dialog2.close();" aria-label="close" class="x">❌</button>
+            <div class="modal_titre">
+              <h2>Je souhaite être rappelée</h2>
+            </div>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="e8b2c22d-3efd-4b6c-841e-87d3d176f82b">
+                <div class="champ demi_champ">
+                    <label for="name">Nom et prénom :</label>
+                    <input type="text" id="name" name="nom_prenom" placeholder="Nom et prénom"/>
+                </div>
+                <div class="champ demi_champ">
+                  <label for="number">Téléphone :</label>
+                  <input type="number" id="phone" name="user_phone" placeholder="Téléphone"/>
+                </div>
+                <div class="champ demi_champ">
+                  <label for="mail">Mail :</label>
+                  <input type="email" id="mail" name="user_mail" placeholder="Mail"/>
+                </div>
+                <div class="champ champ_little_area">
+                  <label for="message">Quels sont les moments où nous pouvons vous appeler ?</label>
+                  <textarea id="message" name="user_message"></textarea>
+                </div>
+                <button type="submit">Je valide</button>
+            </form>
+          </div>
+        </dialog>
     </main>
     <footer>
         <div class="footer_information">
@@ -179,8 +214,8 @@
             <p>610€ la retraite, logement et repas compris dans le prix</p>
         </div>
         <div class="calltoaction">
-          <button>Je réserve ma place</button>
-          <button>Je souhaite être rappelée</button>
+          <button onclick="window.dialog1.showModal();">Je réserve ma place</button>
+          <button onclick="window.dialog2.showModal();">Je souhaite être rappelée</button>
         </div>
     </footer>
 </body>

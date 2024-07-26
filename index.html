@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/61874f9fc9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.css">
     <title>Femmes magiciennes</title>
     <script type="application/ld+json">
@@ -179,6 +181,52 @@
             </form>
           </div>
         </dialog>
+        <dialog id="dialog1_mobile" class="dialog_mobile">
+          <div class="modal_content">
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="e8b2c22d-3efd-4b6c-841e-87d3d176f82b">
+              <button type="reset" onclick="window.dialog1_mobile.close();" aria-label="close" class="x">❌</button>
+              <div class="modal_titre">
+                <h2>Je réserve ma place</h2>
+                <h3>pour cette expérience inoubliable et merveilleuse !</h3>
+              </div>
+              <div class="champ">
+                <label for="name">Nom et prénom :</label>
+                <input type="text" id="name" name="nom_prenom" required/>
+              </div>
+              <div class="champ">
+                <label for="number">Téléphone :</label>
+                <input type="number" id="phone" name="numero" required/>
+              </div>
+              <div class="champ">
+                <label for="mail">Mail :</label>
+                <input type="email" id="mail" name="mail" required/>
+              </div>
+              <div class="champ">
+                <label for="datebirth">Date de naissance :</label>
+                <input type="text" id="datebirth" name="date_naissance" />
+              </div>
+              <div class="champ">
+                <label for="adresse">Adresse postale :</label>
+                <input type="text" id="adresse" name="adresse" />
+              </div>
+              <div class="champ">
+                <label for="reve">Quel est le rêve avec lequel je suis en chemin ?</label>
+                <textarea id="reve" name="reve" rows="4"></textarea>
+              </div>
+              <div class="champ">
+                <label for="appui">Sur quoi je m'appuie déjà pour le manifester ?</label>
+                <textarea id="appui" name="manifestation_reve" rows="4"></textarea>
+              </div>
+              <div class="champ">
+                <label for="attentes">Quelles sont mes attentes ou intentions concernant ce stage ?</label>
+                <textarea id="attentes" name="attentes" rows="6"></textarea>
+              </div>
+              <p>En réservant ma place, je m’engage à participer au stage prévu du 25 au 28 octobre 2024. Mon inscription sera validée à l’envoi d’un chèque d'acompte de 225€ à l’ordre de Marion Boulard Saleix 24420 Sorges en Périgord.</p>
+              <button type="submit" class="form_submit">Je réserve ma place</button>
+            </form>
+          </div>
+        </dialog>
         <dialog id="dialog2" class="dialog">
           <div class="modal_content">
             <button onclick="window.dialog2.close();" aria-label="close" class="x">❌</button>
@@ -207,6 +255,51 @@
             </form>
           </div>
         </dialog>
+        <dialog id="dialog2_mobile" class="dialog_mobile">
+          <div class="modal_content">
+            <button onclick="window.dialog2_mobile.close();" aria-label="close" class="x">❌</button>
+            <div class="modal_titre">
+              <h2>Je souhaite être rappelée</h2>
+            </div>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="e8b2c22d-3efd-4b6c-841e-87d3d176f82b">
+                <div class="champ demi_champ">
+                    <label for="name">Nom et prénom :</label>
+                    <input type="text" id="name" name="nom_prenom" required/>
+                </div>
+                <div class="champ demi_champ">
+                  <label for="number">Téléphone :</label>
+                  <input type="number" id="phone" name="user_phone" required/>
+                </div>
+                <div class="champ demi_champ">
+                  <label for="mail">Mail :</label>
+                  <input type="email" id="mail" name="user_mail"  required/>
+                </div>
+                <div class="champ champ_little_area">
+                  <label for="message">Quels sont les moments où nous pouvons vous appeler ?</label>
+                  <textarea id="message" rows="4" name="user_message" required></textarea>
+                </div>
+                <button type="submit" class="form_submit">Je valide</button>
+            </form>
+          </div>
+        </dialog>
+        <dialog id="dialog3_mobile" class="dialog_mobile">
+          <div class="modal_content">
+            <button onclick="window.dialog3_mobile.close();" aria-label="close" class="x">❌</button>
+            <div class="modal_titre">
+              <h2>Informations générales</h2>
+            </div>
+            <div class="modal_text">
+              <p>Retraite entre femmes enchanteresses du 25 au 28 octobre 2024</p>
+              <p>Mareuil en Périgord 24230</p>
+              <p>610€ la retraite, logement et repas compris dans le prix</p>
+            </div>
+            <div class="info_calltoaction">
+              <button onclick="window.dialog1_mobile.showModal();">Je réserve ma place</button>
+              <button onclick="window.dialog2_mobile.showModal();">Je souhaite être rappelée</button>
+            </div>
+          </div>
+        </dialog>
     </main>
     <footer>
         <div class="footer_information">
@@ -214,9 +307,16 @@
             <p>Mareuil en Périgord 24230</p>
             <p>610€ la retraite, logement et repas compris dans le prix</p>
         </div>
-        <div class="calltoaction">
+        <div class="footer_calltoaction">
           <button onclick="window.dialog1.showModal();">Je réserve ma place</button>
           <button onclick="window.dialog2.showModal();">Je souhaite être rappelée</button>
+        </div>
+        <div class="footer_mobile">
+          <i class="fa-solid fa-info" onclick="window.dialog3_mobile.showModal();"></i>
+          <hr>
+          <i class="fa-solid fa-pen-to-square" onclick="window.dialog1_mobile.showModal();"></i>
+          <hr>
+          <i class="fa-solid fa-phone-flip" onclick="window.dialog2_mobile.showModal();"></i>
         </div>
     </footer>
 </body>

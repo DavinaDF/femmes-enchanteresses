@@ -79,6 +79,20 @@ button {
   color: #563148;
 }
 
+@media screen and (max-width: 768px) {
+  button {
+    padding: 5px;
+    font-size: 12px;
+    max-width: 150px;
+  }
+  .section_titre {
+    max-width: 60%;
+    padding: 0 20px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
 /* Footer fixe de la landing page */
 footer {
   z-index: 3;
@@ -99,9 +113,35 @@ footer {
   flex-direction: column;
   gap: 8px;
 }
-.calltoaction {
+.footer_calltoaction {
   display: flex;
   gap: 30px;
+}
+.footer_mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .footer_calltoaction {
+    display: none;
+  }
+  .footer_information {
+    display: none;
+  }
+  footer {
+    height: 50px;
+  }
+  .footer_mobile {
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .footer_mobile i {
+    padding: 0 20px;
+    font-size: 30px;
+    /* border-left: 1rem solid #fff; */
+  }
 }
 
 /* Accueil landing page */
@@ -120,18 +160,6 @@ header {
     height: 80%;
     position: relative;
 }
-
-/* .titre {
-    position: absolute;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: rgb(86, 49, 72, 0.8);
-    font-size: 32px;
-    font-weight: 600;
-    color: #fff;
-    top: 30px;
-    left: 30px;
-} */
 .titre, .sous-titre {
     position: absolute;
     padding: 20px 30px;
@@ -144,7 +172,7 @@ header {
 }
 .titre {
   top: 30px;
-    left: 30px;
+  left: 30px;
 }
 .sous-titre {
   top: 120px;
@@ -161,6 +189,35 @@ header {
     color: #fff;
     top: 30px;
     right: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 50vh;
+  }
+  .date {
+    width: 100%;
+    border-radius: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+    top: 0;
+    right: 0;
+  }
+  .titre, .sous-titre {
+    white-space: nowrap;
+    padding: 10px;
+    font-size: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .titre {
+    top: 70px;
+  }
+  .sous-titre {
+    top: 140px;
+  }
 }
 
 /* Section description de l'event */
@@ -195,6 +252,39 @@ header {
 }
 .part_right .description_container{
   margin-left: -250px;
+}
+@media screen and (max-width: 768px) {
+  .description {
+    max-width: 100%;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+  }
+  .part_left {
+    width: 100%;
+    display: flex;
+    flex-direction:column-reverse;
+  }
+  .part_right {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+  }
+  .description img {
+    max-width: 100%;
+  }
+  .description_container {
+    font-size: 12px;
+    padding: 10px;
+    margin: 20px;
+    margin-top: -200px;
+  }
+  .part_left .description_container{
+    margin-right: 20px;
+  }
+  .part_right .description_container{
+    margin-left: 20px;
+  }
 }
 
 /* Section programme de l'event */
@@ -233,11 +323,43 @@ header {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  .programme {
+    margin: 10px;
+    max-width: 100%;
+    align-items: center;
+  }
+  .programme h2 {
+    margin-bottom: 10px;
+  }
+  .programme_container {
+    margin: 0;
+    justify-content: none;
+    flex-wrap: wrap;
+  }
+  .programme_bloc {
+    width: 46%;
+    min-width: 150px;
+    margin-bottom: 10px;
+  }
+  .programme_bloc p {
+    padding: 10px;
+    font-size: 12px;
+  }
+  .programme_titre {
+    background-color: rgb(86, 49, 72);  
+    overflow-wrap: break-word;
+    height: auto;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
 /* Section lieu de la retraite  */
 .place {
-  max-width: 1440px;
-  display: flex;
-  flex-direction: column;
+  max-width: 100%;
+  margin: 0 10px;
 }
 /* .place img {
   width: 400px;
@@ -250,6 +372,22 @@ header {
   font-size: 16px;
   font-weight: 100;
   margin-left: -60px;
+}
+@media screen and (max-width: 768px) {
+  .place {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+  .place img {
+    width: 100%;
+  }
+  .place_description {
+    z-index: 2;
+    max-width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    margin: 10px 20px -50px 20px;
+  }
 }
 
 /* Section about  */
@@ -287,6 +425,42 @@ header {
 .marion .about_description{
   margin-right: -250px;
 }
+@media screen and (max-width: 768px) {
+  .about {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .amelia {
+    margin: 10px 0px;
+    max-width: 100%;
+    flex-direction: column;
+  }
+  .marion {
+    margin-bottom: 10px;
+    max-width: 100%;
+    flex-direction: column-reverse;
+  }
+  .about img {
+    max-width: 100%;
+  }
+  .about_description {
+    margin: -100px 20px 10px 20px;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 100;
+  }
+  .about_description h3 {
+    margin-bottom: 20px;
+  }
+  .amelia .about_description{
+    margin-left: 20px;
+  }
+  .marion .about_description{
+    margin-right: 20px;
+  }
+}
+
 
 /* Modal pour formulaire résa et rappel */
 
@@ -393,5 +567,97 @@ textarea {
   margin: auto;
   margin-top: 20px;
 }
-
+@media screen and (max-width: 768px) {
+  .dialog_mobile {
+    margin: auto;
+    background: #563148;
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    border: 0;
+    -webkit-animation: fadeIn 1s ease both;
+            animation: fadeIn 1s ease both;
+  }
+  .dialog_mobile .x {
+    filter: grayscale(1);
+    box-shadow: none;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: ease filter, transform 0.3s;
+    cursor: pointer;
+    transform-origin: center;
+  }
+  .dialog_mobile h2 {
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    color: #fff;
+  }
+  .dialog_mobile h3 {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+  }
+  .dialog_mobile form {
+    display: flex;
+    flex-direction: column;
+  }
+  .dialog_mobile label {
+    font-size: 10px;
+    font-weight: 100;
+    color: #fff;
+    padding-left: 4px;
+    padding-bottom: 4px;
+  }
+  .dialog_mobile .champ {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .champ input {
+    height: 30px;
+  }
+  .dialog_mobile p {
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: 100;
+    color: #fff;
+  }
+  .dialog_mobile .form_submit {
+    padding: 10px 20px;
+  }
+  #dialog3_mobile .modal_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #dialog3_mobile .modal_text {
+    max-width: 60%;
+    margin: auto;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 16px;
+  }
+  #dialog3_mobile p {
+    margin: 30px 0;
+    font-size: 16px;
+  }
+  #dialog3_mobile .info_calltoaction {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #dialog3_mobile button {
+    margin: 10px;
+    padding: 10px 30px;
+    max-width: 400px;
+    height: 40px;
+  }
+}
 
